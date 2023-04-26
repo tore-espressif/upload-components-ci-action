@@ -7,6 +7,10 @@ if [ -n "$SKIP_PRE_RELEASE" ]; then
     UPLOAD_ARGUMENTS+=("--skip-pre-release")
 fi
 
+if [ -n "$CHECK_ONLY" ]; then
+    UPLOAD_ARGUMENTS+=("--check-only")
+fi
+
 if [ -n "$COMPONENT_VERSION" ]; then
     if [ "$COMPONENT_VERSION" == "git" ]; then
         git fetch --force --tags
